@@ -70,6 +70,14 @@ body {
   }
 }
 
+@mixin plays($player) {
+      display: block;
+      &:after {
+        display: block;
+        content: $player;
+      }
+}
+
 @for $i from 1 through 3 {
   @for $j from 1 through 3 {
     .click.id-#{$i}#{$j}, .show.id-#{$i}#{$j} {
@@ -78,12 +86,12 @@ body {
     }
 
     .click.id-#{$i}#{$j}:checked ~ .show.id-#{$i}#{$j} {
-      display: block;
-      &:after {
-        display: block;
-        content: 'X';
-      }
+      @include plays('X');
     }
   }
 }
 
+// First move.
+.click.id-11:checked + .click.id-12:not(:checked) ~ .show.id-22 {
+  @include plays('O');
+}
