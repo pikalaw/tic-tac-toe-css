@@ -94,6 +94,49 @@ body {
 }
 
 // First move.
-.click.id-11:checked + .click.id-12:not(:checked) ~ .show.id-22 {
-  @include plays('O');
+.click.id- {
+  &11:checked + &12:not(checked) + &13:not(checked) +
+  &21:not(checked) + &22:not(checked) + &23:not(checked) +
+  &31:not(checked) + &32:not(checked) + &33:not(checked),
+  
+  &11:not(checked) + &12:checked + &13:not(checked) +
+  &21:not(checked) + &22:not(checked) + &23:not(checked) +
+  &31:not(checked) + &32:not(checked) + &33:not(checked),
+  
+  &11:not(checked) + &12:not(checked) + &13:checked +
+  &21:not(checked) + &22:not(checked) + &23:not(checked) +
+  &31:not(checked) + &32:not(checked) + &33:not(checked),
+  
+  &11:not(checked) + &12:not(checked) + &13:not(checked) +
+  &21:checked + &22:not(checked) + &23:not(checked) +
+  &31:not(checked) + &32:not(checked) + &33:not(checked),
+  
+  &11:not(checked) + &12:not(checked) + &13:not(checked) +
+  &21:not(checked) + &22:not(checked) + &23:checked +
+  &31:not(checked) + &32:not(checked) + &33:not(checked),
+  
+  &11:not(checked) + &12:not(checked) + &13:not(checked) +
+  &21:not(checked) + &22:not(checked) + &23:not(checked) +
+  &31:checked + &32:not(checked) + &33:not(checked),
+  
+  &11:not(checked) + &12:not(checked) + &13:not(checked) +
+  &21:not(checked) + &22:not(checked) + &23:not(checked) +
+  &31:not(checked) + &32:checked + &33:not(checked),
+  
+  &11:not(checked) + &12:not(checked) + &13:not(checked) +
+  &21:not(checked) + &22:not(checked) + &23:not(checked) +
+  &31:not(checked) + &32:not(checked) + &33:checked {
+    & ~ .show.id-22 {
+      @include plays('O');
+    }
+  }
+
+  &11:not(checked) + &12:not(checked) + &13:not(checked) +
+  &21:not(checked) + &22:checked + &23:not(checked) +
+  &31:not(checked) + &32:not(checked) + &33:not(checked) {
+    & ~ .show.id-11 {
+      @include plays('O');
+    }
+  }
 }
+
