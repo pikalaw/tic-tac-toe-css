@@ -5,21 +5,21 @@ html(lang='en')
     link(rel='stylesheet' href='./index.scss')
   body
     .board
-      .click.id-11
-      .click.id-12
-      .click.id-13
-      .click.id-21
-      .click.id-22
-      .click.id-23
-      .click.id-31
-      .click.id-32
-      .click.id-33
-      .show.id-11
-      .show.id-12
-      .show.id-13
-      .show.id-21
-      .show.id-22
-      .show.id-23
-      .show.id-31
-      .show.id-32
-      .show.id-33
+      .row.id-1
+      .row.id-2
+      .row.id-3
+      .col.id-1
+      .col.id-2
+      .col.id-3
+
+      - let i = 0;
+      while i++ < 3
+        - let j = 0;
+        while j++ < 3
+          input.click(type='checkbox' class=`id-${i}${j}`)
+
+      - let m = 0;
+      while m++ < 3
+        - let n = 0;
+        while n++ < 3
+          .show(class=`id-${m}${n}`)
