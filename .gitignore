@@ -122,3 +122,6 @@ dist
 
 # vim
 *.swp
+
+# project generated files
+.generated/

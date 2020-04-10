@@ -10,14 +10,4 @@ html(lang='en')
       .line.vertical.id-1
       .line.vertical.id-2
 
-      - let i = 0;
-      while i++ < 3
-        - let j = 0;
-        while j++ < 3
-          input.click(type='checkbox' class=`id-${i}${j}`)
-
-      - let m = 0;
-      while m++ < 3
-        - let n = 0;
-        while n++ < 3
-          .show(class=`id-${m}${n}`)
+      include ../.generated/game.html
